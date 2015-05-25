@@ -1,17 +1,25 @@
 // ======================================================================
-// Midas Gulp Config Options
+// Midas
+// ======================================================================
+//
+// A small SASS powered kickstarter for RWD
+// Brought to you by @CodeStalker - midas.jamessteel.co.uk
+
+// ======================================================================
+// Gulp Configuration
 // ======================================================================
 
-var dest = "./project/build";
+var dest = './project/build';
 var src = './project/src';
 var prefix = '/assets/';
 var erase = './project/build';
+// make the webroot of your test domain match the 'dest' var above
+var vm = "http://yourtestserver.dev";
 
 module.exports = {
 
-
     sass: {
-        src: src + prefix + "midas/*.scss",
+        src: src + prefix + "midas/**/*.scss",
         dest: dest + prefix + "/css/",
         temp: src + prefix + "/css/"
     },
@@ -20,7 +28,7 @@ module.exports = {
         dest: dest + prefix + "images"
     },
     html: {
-        src: src + "/*.html",
+        src: src + "/**/*.html",
         dest: dest
     },
     // Don't use a trailing slash on paths to scripts here!
@@ -31,7 +39,7 @@ module.exports = {
     },
 
     fonts: {
-        src: src + prefix + "fonts/*.{ttf,woff,eot,svg}",
+        src: src + prefix + "fonts/*.{ttf,woff,eot,svg,html}",
         dest: dest + prefix + "fonts/"
     },
     clean: {
@@ -40,13 +48,19 @@ module.exports = {
     },
     browserSync: {
         server: {
-            baseDir: [dest]
+           baseDir: [dest]
         },
 
         notify: false,
-
         files: [dest + "/**/*.css", dest + "/**/*.html", dest + "/**/*.{ttf,woff,eot,svg}", dest + "/**/*.js"]
 
     },
+    browserSyncVM: {
+
+        proxy: vm,
+        notify: false,
+        files: [dest + "/**/*.css", dest + "fonts/**/*.{ttf,woff,eot,svg}", dest + "/**/*.js"]
+
+    }
 
 };

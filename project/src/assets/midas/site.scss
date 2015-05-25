@@ -6,21 +6,12 @@
 // Brought to you by @CodeStalker - midas.jamessteel.co.uk
 
 // ======================================================================
-// Partials
+// Configuration
 // ======================================================================
 
-@import "partials/libs/normalize";
-@import "partials/libs/grid";
-@import "partials/libs/helpers";
+@import "config";
 
-@import "partials/stacks";
-@import "partials/type";
-
-// ======================================================================
-// Debug
-// ======================================================================
-
-@import "partials/libs/pesticide";
+@import "partials/midas";
 
 // ======================================================================
 // Vars
@@ -335,3 +326,6 @@ $gutter_width: 4%;
     }
   }
 }
+
+
+

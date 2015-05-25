@@ -1,7 +1,5 @@
 head.ready(document, function() {
 
-
-
       $('.slides').slidesjs({
         width: 611,
         height: 450,
